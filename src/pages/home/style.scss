@@ -1,15 +1,35 @@
-.carouselSection {
-    position: relative;
-    margin-bottom: 70px;
-    & > .contentWrapper {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 20px;
+@import "../../mixins.scss";
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .button {
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #333;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .home {
+      flex-direction: column;
     }
-    .carouselTitle {
-        font-size: 24px;
-        color: white;
-        font-weight: normal;
+  
+    .button {
+      margin: 10px 0;
     }
-}
+  }
+  
