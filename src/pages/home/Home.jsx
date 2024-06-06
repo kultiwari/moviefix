@@ -1,20 +1,28 @@
-import React from "react";
-
-import "./style.scss";
-
-import HeroBanner from "./heroBanner/HeroBanner";
-import Trending from "./trending/Trending";
-import Popular from "./popular/Popular";
-import TopRated from "./topRated/TopRated";
-import Explore from "../explore/Explore";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Home.scss';
 
 const Home = () => {
-    return (
-        <div>
-            <Explore/>
-            
-        </div>
-    );
+  const navigate = useNavigate();
+
+  const handleMovieExplore = () => {
+    navigate('/explore/movie');
+  };
+
+  const handleTVExplore = () => {
+    navigate('/explore/tv');
+  };
+
+  return (
+    <div className="home">
+      <button className="button" onClick={handleMovieExplore}>
+        Explore Movies
+      </button>
+      <button className="button" onClick={handleTVExplore}>
+        Explore TV Shows
+      </button>
+    </div>
+  );
 };
 
 export default Home;
