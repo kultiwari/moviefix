@@ -1,0 +1,55 @@
+.button-section {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: flex-start; // Align buttons to the start
+
+    @media (max-width: 768px) {
+        overflow-x: auto; // Enable horizontal scroll
+        padding-bottom: 10px; // Add padding to prevent cut-off
+        white-space: nowrap; // Prevent buttons from wrapping
+
+        // Hide scrollbar on Webkit browsers
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+.genre-button {
+    padding: 5px 15px; // Adjust padding for better appearance
+    margin: 5px; // Set margin between buttons
+    border: none;
+    background-color: #484848;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 4px; // Add border-radius for better appearance
+    font-size: 14px;
+
+    &:hover {
+        background-color: #F0283C;
+        color: #fff;
+    }
+
+    &.selected {
+        background-color: #F0283C;
+        color: white;
+    }
+
+    @media (max-width: 768px) {
+        flex: 0 0 auto; // Prevent buttons from shrinking
+    }
+}
+
+.yearMovies {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr); // 2 movies per row on mobile
+    }
+}
